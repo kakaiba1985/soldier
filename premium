@@ -811,7 +811,7 @@ dt="$(date +'%Y-%m-%d %H:%M:%S')"
 PRE="user_name='$username' AND auth_vpn=md5('$password') AND status='live' AND is_freeze=0 AND is_ban=0 AND duration > 0"
 VIP="user_name='$username' AND auth_vpn=md5('$password') AND status='live' AND is_freeze=0 AND is_ban=0 AND vip_duration > 0"
 PRIV="user_name='$username' AND auth_vpn=md5('$password') AND status='live' AND is_freeze=0 AND is_ban=0 AND private_duration > 0"
-Query="SELECT user_name FROM users WHERE $VIP OR $PRIV"
+Query="SELECT user_name FROM users WHERE $PRE"
 user_name=`mysql -u $USER -p$PASS -D $DB -h $HOST -sN -e "$Query"`
 [ "$user_name" != '' ] && [ "$user_name" = "$username" ] && echo "user : $username" && echo 'authentication ok.' && exit 0 || echo 'authentication failed.'; exit 1
 EOM
@@ -839,7 +839,7 @@ dt="$(date +'%Y-%m-%d %H:%M:%S')"
 PRE="user_name='$username' AND auth_vpn=md5('$password') AND status='live' AND is_freeze=0 AND is_ban=0 AND duration > 0"
 VIP="user_name='$username' AND auth_vpn=md5('$password') AND status='live' AND is_freeze=0 AND is_ban=0 AND vip_duration > 0"
 PRIV="user_name='$username' AND auth_vpn=md5('$password') AND status='live' AND is_freeze=0 AND is_ban=0 AND private_duration > 0"
-Query="SELECT user_name FROM users WHERE $PRIV"
+Query="SELECT user_name FROM users WHERE $PRE OR $VIP"
 user_name=`mysql -u $USER -p$PASS -D $DB -h $HOST -sN -e "$Query"`
 [ "$user_name" != '' ] && [ "$user_name" = "$username" ] && echo "user : $username" && echo 'authentication ok.' && exit 0 || echo 'authentication failed.'; exit 1
 EOM
