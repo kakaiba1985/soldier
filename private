@@ -308,6 +308,7 @@ proto tcp
 duplicate-cn
 dev tun
 keepalive 1 180
+comp-lzo
 resolv-retry infinite 
 max-clients 1000
 ca /etc/openvpn/keys/ca.crt 
