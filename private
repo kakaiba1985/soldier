@@ -2,10 +2,10 @@
 ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
 #change this according to your database details
 #Database Details
-dbhost='localhost';
-dbuser='dbdetails';
-dbpass='dbdetails';
-dbname='dbdetails';
+dbhost='184.168.111.40';
+dbuser='vui-phil-user';
+dbpass='soldier062185';
+dbname='vui-philippines101';
 dbport='3306';
 dbport='3306';
 RED='\033[01;31m';
