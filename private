@@ -848,7 +848,7 @@ echo "SHELL=/bin/bash
 client
 dev tun
 proto tcp
-remote $MYIP 1194
+remote 127.0.0.1 1194
 remote-cert-tls server
 connect-retry infinite
 resolv-retry infinite
@@ -867,7 +867,6 @@ keysize 0
 setenv CLIENT_CERT 0
 reneg-sec 0
 verb 3
-# OVPN_ACCESS_SERVER_PROFILE=Tknetwork
 <ca>
 -----BEGIN CERTIFICATE-----
 MIIE5TCCA82gAwIBAgIJAP0GLynOqm38MA0GCSqGSIb3DQEBCwUAMIGnMQswCQYD
