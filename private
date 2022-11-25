@@ -15,10 +15,10 @@ touch /etc/openvpn/server2.conf
 
 cat <<\EOM >/etc/openvpn/login/config.sh
 #!/bin/bash
-HOST='184.168.111.40'
-USER='vui-phil-user'
-PASS='soldier062185'
-DB='vui-philippines101'
+HOST='68.20.35.134'
+USER='db_namemo'
+PASS='db_passmo'
+DB='db_namemo'
 
 EOM
 
@@ -27,10 +27,10 @@ EOM
 username=`head -n1 $1 | tail -1`   
 password=`head -n2 $1 | tail -1`
 
-HOST='184.168.111.40'
-USER='vui-phil-user'
-PASS='soldier062185'
-DB='vui-philippines101'
+HOST='68.20.35.134'
+USER='db_namemo'
+PASS='db_passmo'
+DB='db_namemo'
 
 Query="SELECT user_name FROM users WHERE user_name='$username' AND auth_vpn=md5('$password') AND status='live' AND is_freeze=0 AND is_ban=0 AND (duration > 0 OR vip_duration > 0 OR private_duration > 0)"
 user_name=`mysql -u $USER -p$PASS -D $DB -h $HOST -sN -e "$Query"`
