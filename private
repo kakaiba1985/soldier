@@ -322,6 +322,7 @@ cipher AES-128-CBC
 tcp-nodelay
 up /etc/openvpn/update-resolv-conf                                                                                      
 down /etc/openvpn/update-resolv-conf
+status /var/www/html/stat/tcp.txt
 EOF
 cat << EOF > /etc/openvpn/server1.conf
 mode server 
@@ -355,6 +356,7 @@ tcp-nodelay
 script-security 3
 up /etc/openvpn/update-resolv-conf                                                                                      
 down /etc/openvpn/update-resolv-conf
+status /var/www/html/stat/udp.txt
 EOF
 
 #client-connect file
